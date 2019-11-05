@@ -176,7 +176,7 @@ public struct ReweShipping: Content {
 public struct ReweCategory: Content {
     public let primary: Bool
     public let id: String
-    public let _links: Link
+    public let _links: ReweLink
 }
 
 public struct ReweToggle: Content {
