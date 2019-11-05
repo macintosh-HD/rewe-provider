@@ -40,7 +40,7 @@ public struct CondensedOpeningHours: Content {
 
 public struct SpecialOpeningTimes: Content {
     let wwIdent: String
-    let specialOpeningTimes: Any
+    // let specialOpeningTimes:
 }
 
 public struct MarketOpen: Content {
