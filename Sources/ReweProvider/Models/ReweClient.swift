@@ -33,7 +33,7 @@ public struct ReweClient: Service {
         
         if serviceTypes.count > 0 {
             var serviceTypeList: String = serviceTypes.reduce("") { (res, sv) -> String in
-                res + "," + sv
+                res + "," + sv.rawValue
             }
             
             serviceTypeList.removeFirst()
