@@ -125,7 +125,7 @@ public struct Article: Content {
     let _embedded: EmbeddedArticleInformation
 }
 
-public struct EmbeddedArticleInformatino: Content {
+public struct EmbeddedArticleInformation: Content {
     let listing: Listing
     let store: Store
     let merchant: Merchant
@@ -144,7 +144,7 @@ public struct Pricing: Content {
     let grammage: String
 }
 
-public enum Currency: Content {
+public enum Currency: String, Content {
     case EUR
 }
 

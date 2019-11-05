@@ -16,7 +16,7 @@ public struct SearchType: Content {
     let autoCorret: AutoCorrect
     let marketCode: MarketCode
     let serviceType: [ServiceType]
-    let selectedFacets: [Facets]
+    let selectedFacets: [Facet]
     let locale: String
     let activeCategorySlug: String?
 }

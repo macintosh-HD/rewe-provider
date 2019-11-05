@@ -11,7 +11,9 @@ public struct ReweClient: Service {
     }
     
     public func fetchMarketsFor(postalCode: String) throws -> Future<MarketResponse> {
-        let marketFetchUrl = URL(string: "\(marketUrl)/\(postalCode)")
+        guard let marketFetchUrl = URL(string: "\(marketUrl)/\(postalCode)") else {
+            throw Abort(.internalServerError, reason: "Could not create marketFetchUrl.")
+        }
         
         return httpClient.get(marketFetchUrl).flatMap { response in
             do {
@@ -22,7 +24,7 @@ public struct ReweClient: Service {
         }
     }
     
-    public func searchProductsFor(product search: String, market: String? = nil, serviceTypes: [ServiceTypes] = [], sorting: SortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil) throws -> Future<SearchResponse> {
+    public func searchProductsFor(product search: String, market: String? = nil, serviceTypes: [ServiceType] = [], sorting: SortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil) throws -> Future<SearchResponse> {
         var productSearchURL = "\(productUrl)?search=\(search)"
         
         if let marketNotNil = market {
