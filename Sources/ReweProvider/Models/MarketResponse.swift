@@ -1,8 +1,8 @@
 import Vapor
 
-public struct MarketResponse: Content {
-    public let geoLocation: GeoLocation
-    public let zipCode: PostalCode
+public struct ReweMarketResponse: Content {
+    public let geoLocation: ReweGeoLocation
+    public let zipCode: RewePostalCode
     public let stationaryMarkets: [ReweMarket]
 }
 
@@ -10,15 +10,15 @@ public struct ReweMarket: Content {
     public let id: Int
     public let name: String
     public let regionShort: String
-    public let address: Address
-    public let geoLocation: GeoLocation
+    public let address: ReweAddress
+    public let geoLocation: ReweGeoLocation
     public let phone: String
     public let advertisingCounty: String
-    public let company: Company
-    public let type: MarketType
-    public let openingHours: OpeningHours
-    public let specialOpeningTimes: SpecialOpeningTimes?
-    public let marketOpen: MarketOpen
-    public let availableServiceTypes: [ServiceType]?
+    public let company: ReweCompany
+    public let type: ReweMarketType
+    public let openingHours: ReweOpeningHours
+    public let specialOpeningTimes: ReweSpecialOpeningTimes?
+    public let marketOpen: ReweMarketOpen
+    public let availableServiceTypes: [ReweServiceType]?
     public let distance: String
 }

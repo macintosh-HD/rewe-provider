@@ -1,41 +1,41 @@
 import Vapor
 
-public struct SearchResponse: Content {
-    public let search: SearchType
-    public let pagination: Pagination
-    public let facets: [Facet]
-    public let _embedded: EmbeddedProducts
-    public let toggles: [Toggle]
-    public let seoData: SeoData
-    public let marketInfo: MarketInfo
+public struct ReweSearchResponse: Content {
+    public let search: ReweSearchType
+    public let pagination: RewePagination
+    public let facets: [ReweFacet]
+    public let _embedded: ReweEmbeddedProducts
+    public let toggles: [ReweToggle]
+    public let seoData: ReweSeoData
+    public let marketInfo: ReweMarketInfo
 }
 
-public struct SearchType: Content {
+public struct ReweSearchType: Content {
     public let term: String
-    public let sorting: SortingType
-    public let autoCorret: AutoCorrect
-    public let marketCode: MarketCode
-    public let serviceType: [ServiceType]
-    public let selectedFacets: [Facet]
+    public let sorting: ReweSortingType
+    public let autoCorret: ReweAutoCorrect
+    public let marketCode: ReweMarketCode
+    public let serviceType: [ReweServiceType]
+    public let selectedFacets: [ReweFacet]
     public let locale: String
     public let activeCategorySlug: String?
 }
 
-public struct Pagination: Content {
+public struct RewePagination: Content {
     public let page: Int
     public let totalPages: Int
     public let objectsPerPage: Int
     public let totalResultCount: Int
 }
 
-public struct Facet: Content {
-    public let name: FacetName
+public struct ReweFacet: Content {
+    public let name: ReweFacetName
     public let label: String
-    public let displayType: FacetDisplayType
-    public let facetConstraints: [FacetConstraints]
+    public let displayType: ReweFacetDisplayType
+    public let facetConstraints: [ReweFacetConstraints]
 }
 
-public struct FacetConstraints: Content {
+public struct ReweFacetConstraints: Content {
     public let name: String
     public let label: String
     public let count: Int
@@ -44,6 +44,6 @@ public struct FacetConstraints: Content {
     public let slug: String?
 }
 
-public struct EmbeddedProducts: Content {
-    public let products: [Product]
+public struct ReweEmbeddedProducts: Content {
+    public let products: [ReweProduct]
 }

@@ -10,21 +10,21 @@ public struct ReweClient: Service {
         self.httpClient = httpClient
     }
     
-    public func fetchMarketsFor(postalCode: String) throws -> Future<MarketResponse> {
+    public func fetchMarketsFor(postalCode: String) throws -> Future<ReweMarketResponse> {
         guard let marketFetchUrl = URL(string: "\(marketUrl)/\(postalCode)") else {
             throw Abort(.internalServerError, reason: "Could not create marketFetchUrl.")
         }
         
         return httpClient.get(marketFetchUrl).flatMap { response in
             do {
-                return try response.content.decode(MarketResponse.self)
+                return try response.content.decode(ReweMarketResponse.self)
             } catch {
                 throw Abort(.internalServerError)
             }
         }
     }
     
-    public func searchProductsFor(product search: String, market: String? = nil, serviceTypes: [ServiceType] = [], sorting: SortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil) throws -> Future<SearchResponse> {
+    public func searchProductsFor(product search: String, market: String? = nil, serviceTypes: [ReweServiceType] = [], sorting: ReweSortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil) throws -> Future<ReweSearchResponse> {
         var productSearchURL = "\(productUrl)?search=\(search)"
         
         if let marketNotNil = market {
@@ -59,7 +59,7 @@ public struct ReweClient: Service {
         
         return httpClient.get(requestUrl).flatMap { response in
             do {
-                return try response.content.decode(SearchResponse.self)
+                return try response.content.decode(ReweSearchResponse.self)
             } catch {
                 throw Abort(.internalServerError)
             }
