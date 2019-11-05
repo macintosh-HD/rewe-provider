@@ -1,53 +1,53 @@
 import Vapor
 
 public struct GeoLocation: Content {
-    let latitude: Double
-    let longitude: Double
-    let city: String
-    let state: String
-    let success: Bool
+    public let latitude: Double
+    public let longitude: Double
+    public let city: String
+    public let state: String
+    public let success: Bool
 }
 
 public typealias PostalCode = String
 
 public struct Address: Content {
-    let postalCode: PostalCode
-    let street: String
-    let city: String
-    let houseNumber: Int
+    public let postalCode: PostalCode
+    public let street: String
+    public let city: String
+    public let houseNumber: Int
 }
 
 public struct Company: Content {
-    let name: String
-    let street: String
-    let zipCode: PostalCode
-    let city: String
+    public let name: String
+    public let street: String
+    public let zipCode: PostalCode
+    public let city: String
 }
 
 public struct MarketType: Content {
-    let name: String
-    let id: String
+    public let name: String
+    public let id: String
 }
 
 public struct OpeningHours: Content {
-    let condensed: [CondensedOpeningHours]
+    public let condensed: [CondensedOpeningHours]
 }
 
 public struct CondensedOpeningHours: Content {
-    let days: String
-    let hours: String
+    public let days: String
+    public let hours: String
 }
 
 public struct SpecialOpeningTimes: Content {
-    let wwIdent: String
-    // let specialOpeningTimes:
+    public let wwIdent: String
+    // public let specialOpeningTimes:
 }
 
 public struct MarketOpen: Content {
-    let marketState: MarketState
-    let openTo: String?
-    let openIn: String?
-    let stillOpen: String?
+    public let marketState: MarketState
+    public let openTo: String?
+    public let openIn: String?
+    public let stillOpen: String?
 }
 
 public enum MarketState: String, Content {
@@ -63,7 +63,7 @@ public enum SortingType: String, Content {
 }
 
 public struct AutoCorrect: Content {
-    let originalSearchTerm: String
+    public let originalSearchTerm: String
 }
 
 public typealias MarketCode = Int
@@ -77,71 +77,71 @@ public enum FacetDisplayType: String, Content {
 }
 
 public struct Product: Content {
-    let nan: String
-    let version: Int
-    let productName: String
-    let description: String
-    let brand: Brand
-    let media: Media
-    let hasVariants: Bool
-    let hasDiverseVariantPrices: Bool
-    let freeShipping: Bool
-    let _links: Link
-    let id: Int
-    let _embedded: [EmbeddedProductInformation]
+    public let nan: String
+    public let version: Int
+    public let productName: String
+    public let description: String
+    public let brand: Brand
+    public let media: Media
+    public let hasVariants: Bool
+    public let hasDiverseVariantPrices: Bool
+    public let freeShipping: Bool
+    public let _links: Link
+    public let id: Int
+    public let _embedded: [EmbeddedProductInformation]
 }
 
 public struct Brand: Content {
-    let name: String
+    public let name: String
 }
 
 public struct Media: Content {
-    let images: [Image]
+    public let images: [Image]
 }
 
 public struct Image: Content {
-    let _links: Link
+    public let _links: Link
 }
 
 public struct Link: Content {
-    let `self`: LinkLink?
-    let detail: LinkLink?
-    let products: LinkLink?
+    public let `self`: LinkLink?
+    public let detail: LinkLink?
+    public let products: LinkLink?
 }
 
 public struct LinkLink: Content {
-    let href: String
+    public let href: String
 }
 
 public struct EmbeddedProductInformation: Content {
-    let articles: [Article]
-    let categories: [Category]
+    public let articles: [Article]
+    public let categories: [Category]
 }
 
 public struct Article: Content {
-    let id: String
-    let version: Int
-    let gtin: String
-    let _embedded: EmbeddedArticleInformation
+    public let id: String
+    public let version: Int
+    public let gtin: String
+    public let _embedded: EmbeddedArticleInformation
 }
 
 public struct EmbeddedArticleInformation: Content {
-    let listing: Listing
-    let store: Store
-    let merchant: Merchant
+    public let listing: Listing
+    public let store: Store
+    public let merchant: Merchant
 }
 
 public struct Listing: Content {
-    let id: String
-    let version: Int
-    let pricing: Pricing
-    let limitations: Limitations
+    public let id: String
+    public let version: Int
+    public let pricing: Pricing
+    public let limitations: Limitations
 }
 
 public struct Pricing: Content {
-    let currentRetailPrice: Int
-    let currency: Currency
-    let grammage: String
+    public let currentRetailPrice: Int
+    public let currency: Currency
+    public let grammage: String
 }
 
 public enum Currency: String, Content {
@@ -149,49 +149,49 @@ public enum Currency: String, Content {
 }
 
 public struct Limitations: Content {
-    let orderLimit: Int
-    let bulkyGoodsShare: Int
+    public let orderLimit: Int
+    public let bulkyGoodsShare: Int
 }
 
 public struct Store: Content {
-    let id: String
-    let version: Int
+    public let id: String
+    public let version: Int
 }
 
 public struct Merchant: Content {
-    let id: String
-    let version: Int
-    let name: String
-    let type: String
-    let logo: String
-    let shipping: Shipping
+    public let id: String
+    public let version: Int
+    public let name: String
+    public let type: String
+    public let logo: String
+    public let shipping: Shipping
 }
 
 public struct Shipping: Content {
-    let deliveryOption: String
-    let carrier: String
-    let centAmount: Int
+    public let deliveryOption: String
+    public let carrier: String
+    public let centAmount: Int
 }
 
 public struct Category: Content {
-    let primary: Bool
-    let id: String
-    let _links: Link
+    public let primary: Bool
+    public let id: String
+    public let _links: Link
 }
 
 public struct Toggle: Content {
-    let name: String
-    let active: Bool
+    public let name: String
+    public let active: Bool
 }
 
 public struct SeoData: Content {
-    let canonical: String?
-    let index: Bool
-    let follow: Bool
-    let description: String
-    let pageTitle: String
+    public let canonical: String?
+    public let index: Bool
+    public let follow: Bool
+    public let description: String
+    public let pageTitle: String
 }
 
 public struct MarketInfo: Content {
-    let bulkyGoodsText: String
+    public let bulkyGoodsText: String
 }

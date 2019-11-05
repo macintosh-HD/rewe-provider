@@ -1,24 +1,24 @@
 import Vapor
 
 public struct MarketResponse: Content {
-    let geoLocation: GeoLocation
-    let zipCode: PostalCode
-    let stationaryMarkets: [ReweMarket]
+    public let geoLocation: GeoLocation
+    public let zipCode: PostalCode
+    public let stationaryMarkets: [ReweMarket]
 }
 
 public struct ReweMarket: Content {
-    let id: Int
-    let name: String
-    let regionShort: String
-    let address: Address
-    let geoLocation: GeoLocation
-    let phone: String
-    let advertisingCounty: String
-    let company: Company
-    let type: MarketType
-    let openingHours: OpeningHours
-    let specialOpeningTimes: SpecialOpeningTimes?
-    let marketOpen: MarketOpen
-    let availableServiceTypes: [ServiceType]?
-    let distance: String
+    public let id: Int
+    public let name: String
+    public let regionShort: String
+    public let address: Address
+    public let geoLocation: GeoLocation
+    public let phone: String
+    public let advertisingCounty: String
+    public let company: Company
+    public let type: MarketType
+    public let openingHours: OpeningHours
+    public let specialOpeningTimes: SpecialOpeningTimes?
+    public let marketOpen: MarketOpen
+    public let availableServiceTypes: [ServiceType]?
+    public let distance: String
 }
