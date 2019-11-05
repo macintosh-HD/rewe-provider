@@ -1,0 +1,17 @@
+
+# Created by https://www.gitignore.io/api/vapor
+
+### Vapor ###
+Config/secrets
+
+### Vapor Patch ###
+Package.resolved
+Package.pins
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+
+# End of https://www.gitignore.io/api/vapor
