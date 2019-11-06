@@ -25,7 +25,10 @@ public struct ReweClient: Service {
     }
     
     public func searchProductsFor(product searchTerm: String, market: String? = nil, serviceTypes: [ReweServiceType] = [], sorting: ReweSortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil) throws -> Future<ReweSearchResponse> {
-        let search = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        guard let search = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            throw Abort(.internalServerError, reason: "Could not encode product-searchterm.")
+        }
+        
         var productSearchURL = "\(productUrl)?search=\(search)"
         
         if let marketNotNil = market {
@@ -55,6 +58,7 @@ public struct ReweClient: Service {
         }
         
         guard let requestUrl = URL(string: productSearchURL) else {
+            debugPrint(productSearchURL)
             throw Abort(.internalServerError)
         }
         
