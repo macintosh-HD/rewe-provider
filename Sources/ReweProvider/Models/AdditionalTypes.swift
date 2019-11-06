@@ -1,8 +1,8 @@
 import Vapor
 
 public struct ReweGeoLocation: Content {
-    public let latitude: Double
-    public let longitude: Double
+    public let latitude: String
+    public let longitude: String
     public let city: String
     public let state: String
     public let success: Bool
