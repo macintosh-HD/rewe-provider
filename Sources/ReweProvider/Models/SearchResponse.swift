@@ -5,17 +5,18 @@ public struct ReweSearchResponse: Content {
     public let pagination: RewePagination
     public let facets: [ReweFacet]
     public let _embedded: ReweEmbeddedProducts
-    public let toggles: [ReweToggle]
-    public let seoData: ReweSeoData
-    public let marketInfo: ReweMarketInfo
+    public let toggles: [ReweToggle]?
+    public let seoData: ReweSeoData?
+    public let marketInfo: ReweMarketInfo?
+    public let _links: ReweLink?
 }
 
 public struct ReweSearchType: Content {
     public let term: String
     public let sorting: ReweSortingType
-    public let autoCorret: ReweAutoCorrect
-    public let marketCode: ReweMarketCode
-    public let serviceType: [ReweServiceType]
+    public let autoCorrect: ReweAutoCorrect
+    public let marketCode: ReweMarketCode?
+    public let serviceTypes: [ReweServiceType]?
     public let selectedFacets: [ReweFacet]
     public let locale: String
     public let activeCategorySlug: String?
@@ -31,7 +32,7 @@ public struct RewePagination: Content {
 public struct ReweFacet: Content {
     public let name: ReweFacetName
     public let label: String
-    public let displayType: ReweFacetDisplayType
+    public let displayType: ReweFacetDisplayType?
     public let facetConstraints: [ReweFacetConstraints]
 }
 

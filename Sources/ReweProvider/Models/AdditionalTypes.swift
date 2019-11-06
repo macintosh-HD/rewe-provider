@@ -85,7 +85,7 @@ public struct ReweProduct: Content {
     public let media: ReweMedia
     public let hasVariants: Bool
     public let hasDiverseVariantPrices: Bool
-    public let freeShipping: Bool
+    public let freeShipping: Bool?
     public let _links: ReweLink
     public let id: Int
     public let _embedded: [ReweEmbeddedProductInformation]
@@ -105,6 +105,9 @@ public struct ReweImage: Content {
 
 public struct ReweLink: Content {
     public let `self`: ReweLinkLink?
+    public let next: ReweLinkLink?
+    public let last: ReweLinkLink?
+    public let base: ReweLinkLink?
     public let detail: ReweLinkLink?
     public let products: ReweLinkLink?
 }
