@@ -17,7 +17,7 @@ public struct ReweSearchType: Content {
     public let autoCorrect: ReweAutoCorrect
     public let marketCode: ReweMarketCode?
     public let serviceTypes: [ReweServiceType]?
-    public let selectedFacets: [ReweFacet]
+    // public let selectedFacets:
     public let locale: String
     public let activeCategorySlug: String?
 }

@@ -80,15 +80,15 @@ public struct ReweProduct: Content {
     public let nan: String
     public let version: Int
     public let productName: String
-    public let description: String
+    public let description: String?
     public let brand: ReweBrand
     public let media: ReweMedia
     public let hasVariants: Bool
     public let hasDiverseVariantPrices: Bool
     public let freeShipping: Bool?
     public let _links: ReweLink
-    public let id: Int
-    public let _embedded: [ReweEmbeddedProductInformation]
+    public let id: String
+    public let _embedded: ReweEmbeddedProductInformation
 }
 
 public struct ReweBrand: Content {
@@ -144,6 +144,8 @@ public struct ReweListing: Content {
 public struct RewePricing: Content {
     public let currentRetailPrice: Int
     public let currency: ReweCurrency
+    public let basePrice: Int?
+    // public let baseUnit: ReweBaseUnit?
     public let grammage: String
 }
 
@@ -167,7 +169,7 @@ public struct ReweMerchant: Content {
     public let name: String
     public let type: String
     public let logo: String
-    public let shipping: ReweShipping
+    public let shipping: ReweShipping?
 }
 
 public struct ReweShipping: Content {
