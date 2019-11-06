@@ -14,7 +14,7 @@ public struct ReweAddress: Content {
     public let postalCode: RewePostalCode
     public let street: String
     public let city: String
-    public let houseNumber: Int
+    public let houseNumber: String
 }
 
 public struct ReweCompany: Content {

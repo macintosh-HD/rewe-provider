@@ -7,7 +7,7 @@ public struct ReweMarketResponse: Content {
 }
 
 public struct ReweMarket: Content {
-    public let id: Int
+    public let id: String
     public let name: String
     public let regionShort: String
     public let address: ReweAddress
