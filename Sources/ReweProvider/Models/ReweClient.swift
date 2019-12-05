@@ -24,7 +24,7 @@ public struct ReweClient: Service {
         }
     }
     
-    public func searchProductsFor(product searchTerm: String, market: String? = nil, serviceTypes: [ReweServiceType] = [], sorting: ReweSortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil, categorySlug: String?) throws -> Future<ReweSearchResponse> {
+    public func searchProductsFor(product searchTerm: String, market: String? = nil, serviceTypes: [ReweServiceType] = [], sorting: ReweSortingType? = nil, page: Int? = nil, objectsPerPage: Int? = nil, categorySlug: String? = nil) throws -> Future<ReweSearchResponse> {
         guard let search = searchTerm.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             throw Abort(.internalServerError, reason: "Could not encode product-searchterm.")
         }
