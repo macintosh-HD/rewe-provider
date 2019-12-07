@@ -51,7 +51,7 @@ public struct ReweMarketOpen: Content {
 }
 
 public enum ReweMarketState: String, Content {
-    case OPEN, CLOSE
+    case OPEN, CLOSE, NEARLY_CLOSED
 }
 
 public enum ReweServiceType: String, Content {
