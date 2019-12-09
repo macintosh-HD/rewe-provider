@@ -66,7 +66,7 @@ public struct ReweAutoCorrect: Content {
     public let originalSearchTerm: String
 }
 
-public typealias ReweMarketCode = Int
+public typealias ReweMarketCode = String
 
 public enum ReweFacetName: String, Content {
     case MERCHANT_TYPE, CATEGORY, ATTRIBUTE, BRAND, MERCHANT_NAME
