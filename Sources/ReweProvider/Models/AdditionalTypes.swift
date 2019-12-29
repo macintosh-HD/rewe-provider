@@ -77,7 +77,7 @@ public enum ReweFacetDisplayType: String, Content {
 }
 
 public struct ReweProduct: Content {
-    public let nan: String
+    public let nan: String?
     public let version: Int
     public let productName: String
     public let description: String?
